@@ -70,7 +70,7 @@ ecommerce-churn-prediction/
 | **XGBoost**             | **0.92** | **0.72**           | **0.94** |
 ----------------------------------------------------------------------
 
--**XGBoost** performed best and was selected for final deployment.
+- **XGBoost** performed best and was selected for final deployment.
 
 ---
 
@@ -93,7 +93,7 @@ ecommerce-churn-prediction/
 ## Model Deployment
 
 model saved as :
-- models/xgboost_model.pkl
+    models/xgboost_model.pkl
 
 ---
 
@@ -102,7 +102,7 @@ model saved as :
 Install Packages:
 ```bash
 pip install -r requirements.txt
-
+```
 key Packages
 -pandas
 -numpy
