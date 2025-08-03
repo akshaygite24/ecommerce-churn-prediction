@@ -91,7 +91,6 @@ The Dataset includes features such as:
 ![SHAP Plot](plots/shap_summary_plots.png)
 
 ## Model Deployment
-ds
 model saved as :
     models/xgboost_model.pkl
 
