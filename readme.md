@@ -26,7 +26,7 @@ The Dataset includes features such as:
 ---
 
 ## Project Structure
-ecommerce-churn-prediction/
+```ecommerce-churn-prediction/
 │
 ├── data/
 │ ├── raw/
@@ -47,7 +47,7 @@ ecommerce-churn-prediction/
 ├── .gitignore
 ├── requirements.txt
 ├── README.md
-
+```
 ---
 
 ## Data Preprocessing
@@ -91,7 +91,7 @@ ecommerce-churn-prediction/
 ![SHAP Plot](plots/shap_summary_plots.png)
 
 ## Model Deployment
-
+ds
 model saved as :
     models/xgboost_model.pkl
 
@@ -104,20 +104,20 @@ Install Packages:
 pip install -r requirements.txt
 ```
 key Packages
--pandas
--numpy
--scikit-learn
--matplotlib / seaborn
--xgboost
--shap
+- pandas
+- numpy
+- scikit-learn
+- matplotlib / seaborn
+- xgboost
+- shap
 
 
 ## Future Improvement
--Better hyperparameter tuning
--Deploy via Stremlit dashboard
--Scheduled retraining on fresh data
+- Better hyperparameter tuning
+- Deploy via Stremlit dashboard
+- Scheduled retraining on fresh data
 
 ## Author
-Akshay Gite
+### Akshay Gite
 Aspiring Data Scientist | ML & AI Practitioner
 
