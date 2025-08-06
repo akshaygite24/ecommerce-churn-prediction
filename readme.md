@@ -15,11 +15,11 @@ proactive model that classifies whether a customer is likely to churn.
 
 The Dataset includes features such as:
 
--`Tenure` - Number of months the customer has been with the company
--`WarehouseToHome` - Distance Between Warehouse and Customer's home
--`SatisfactionScore` - Customer Satisfaction (1 to 5)
--`CashbackAmount` - Cashback earned by Customer
--`PreferredOrderCart`, `MaritalStatus`, etc.
+- `Tenure` - Number of months the customer has been with the company
+- `WarehouseToHome` - Distance Between Warehouse and Customer's home
+- `SatisfactionScore` - Customer Satisfaction (1 to 5)
+- `CashbackAmount` - Cashback earned by Customer
+- `PreferredOrderCart`, `MaritalStatus`, etc.
 
 **Target Variable**: `Churn` (1 = churned, 0 = retained)
 
@@ -27,6 +27,9 @@ The Dataset includes features such as:
 
 ## Project Structure
 ```ecommerce-churn-prediction/
+│
+├── app/
+│   └── streamlit_app.py
 │
 ├── data/
 │ ├── raw/
@@ -52,25 +55,27 @@ The Dataset includes features such as:
 
 ## Data Preprocessing
 
-- Removed Missing Values
-- Dropped Duplicates
-- Converted Categorical Variables
-- Feature Engineering
-- Balanced Class Distibution using `scale_pos_weight`
+- Removed missing values
+- Dropped duplicates
+- One-hot encoded categorical features
+- Created new engineered features:
+  - IsNewCustomer
+  - LowSatisfaction
+  - HighCashback
+  - RecentlyActive
+- Addressed class imbalance using scale_pos_weight in XGBoost
 
 ---
 
 ## Models Tried
 
-----------------------------------------------------------------------
 | Model                   | Accuracy | F1 Score (Class 1) | AUC      |
 |-------------------------|----------|--------------------|----------|
 | Logistic Regression     | 0.90     | 0.60               | 0.83     |
 | Random Forest           | 0.91     | 0.64               | 0.86     |
 | **XGBoost**             | **0.92** | **0.72**           | **0.94** |
-----------------------------------------------------------------------
 
-- **XGBoost** performed best and was selected for final deployment.
+- **XGBoost** performed best and was selected for final Model.
 
 ---
 
@@ -91,32 +96,41 @@ The Dataset includes features such as:
 ![SHAP Plot](plots/shap_summary_plots.png)
 
 ## Model Deployment
-model saved as :
-    models/xgboost_model.pkl
-
+- Built a Streamlit web application (streamlit_app.py)
+- Model saved at: models/final_xgb_model.pkl
+- Predicts churn and shows probability
+- Includes real-time feature input + SHAP-based insights
 ---
 
-## Requirements
+## Installation
 
-Install Packages:
+
 ```bash
+git clone https://github.com/akshaygite24/ecommerce-churn-prediction.git
+
+cd ecommerce-churn-prediction
+
 pip install -r requirements.txt
+
 ```
-key Packages
+## Libraries
 - pandas
 - numpy
 - scikit-learn
 - matplotlib / seaborn
+- seaborn
 - xgboost
 - shap
+- streamlit
+- joblib
 
 
 ## Future Improvement
 - Better hyperparameter tuning
-- Deploy via Stremlit dashboard
 - Scheduled retraining on fresh data
+- Add CI/CD for automated deployment
 
 ## Author
 ### Akshay Gite
-Aspiring Data Scientist | ML & AI Practitioner
+Data Science & Machine Learning Enthusiast
 
