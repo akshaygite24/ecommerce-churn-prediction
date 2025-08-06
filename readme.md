@@ -120,6 +120,11 @@ conda activate churn_env
 ```bash
 pip install -r requirements.txt
 ```
+
+### Run Streamlit App
+```bash
+streamlit run app/streamlit_app.py
+``` 
 ## Libraries
 - pandas
 - numpy
