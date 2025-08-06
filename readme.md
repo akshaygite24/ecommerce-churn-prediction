@@ -109,9 +109,16 @@ The Dataset includes features such as:
 git clone https://github.com/akshaygite24/ecommerce-churn-prediction.git
 
 cd ecommerce-churn-prediction
+```
 
+### Using Conda
+```bash 
+conda env create -f environment.yml
+conda activate churn_env
+```
+### Python and pip
+```bash
 pip install -r requirements.txt
-
 ```
 ## Libraries
 - pandas
